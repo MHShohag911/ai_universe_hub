@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Universe Hub</title>
+
+    <!-- DaisyUI and Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="space-y-5">
+    <!-- Header Section -->
+    <header>
+      <section class="text-center">
+        <div class="navbar flex justify-center">
+          <a
+            href="index.html"
+            class="text-black text-5xl p-4 rounded-lg font-semibold"
+            >AI Universe Hub</a
+          >
+        </div>
+        <button onclick="sortByDate()" class="btn bg-[#EB5757] text-white">Sort By Date</button>
+      </section>
+    </header>
+    <main class="space-y-5">
+      <section class="p-5">
+        <div
+          id="card-container"
+          class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        ></div>
+      </section>
+
+      <!-- Modal Section -->
+      <section>
+        <!-- You can open the modal using ID.showModal() method -->
+        <dialog id="my_modal_3" class="modal">
+          <div class="lg:w-4/5 p-5 m-8 bg-white rounded-xl lg:p-20 relative">
+            <form method="dialog">
+              <button
+                class="btn btn-sm btn-circle bg-[#EB5757] absolute -right-4 -top-2 border-none"
+              >
+                ✕
+              </button>
+            </form>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div
+                class="bg-[#EB57570D] p-5 rounded-lg border border-[#EB5757] space-y-5"
+              >
+                <h2 id="description" class="font-semibold">
+                  ChatGPT is an AI-powered chatbot platform that uses openAI's
+                  GPT technology to simulate human conversation.
+                </h2>
+                <div
+                  class="text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                >
+                  <div
+                    class="bg-white text-[#03A30A] rounded-lg font-bold p-2 m-2"
+                  >
+                    <span id="price-1"></span>
+                    <br />
+                    <span id="plan-1"></span>
+                  </div>
+                  <div
+                    class="bg-white text-[#F28927] rounded-lg font-bold p-2 m-2"
+                  >
+                    <span id="price-2"></span>
+                    <br />
+                    <span id="plan-2"></span>
+                  </div>
+                  <div
+                    class="bg-white text-[#EB5757] rounded-lg font-bold p-2 m-2"
+                  >
+                    <span id="price-3"></span>
+                    <br />
+                    <span id="plan-3"></span>
+                  </div>
+                </div>
+                <div class="flex justify-around">
+                  <div>
+                    <h2 class="font-bold">Features</h2>
+                    <div id="modal-features">
+
+                    </div>
+                  </div>
+                  <div>
+                    <h2 class="font-bold">Integrations</h2>
+                    <div  id="modal-integrations" >
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border border-[#E7E7E7] flex flex-col justify-between p-5 rounded-lg"
+              >
+                <img id="modalImg" class="rounded-lg" src="" alt="" />
+                <p id="image-text"></p>
+                <div>
+                  <h2 id="question" class="text-xl font-semibold text-center">
+                    Hi, how are you doing today?
+                  </h2>
+                  <p id="answer" class="text-center mt-3">
+                    I'm doing well, thank you for asking. How can I assist you
+                    today?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </section>
+    </main>
+    <footer>
+      <section class="text-center">
+        <button
+          id="see_more"
+          onclick="seeMore()"
+          class="btn bg-[#EB5757] text-white"
+        >
+          See More
+        </button>
+      </section>
+    </footer>
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
